@@ -22,7 +22,7 @@
             <div class="w-full max-w-3xl mx-auto bg-gray-50 p-10 rounded-xl">
                 <div class="flex flex-col justify-center items-center">
                     <div>
-                        <x-application-logo class="block h-16 w-auto fill-current text-teal-500" />
+                        <x-application-logo class="block h-16 w-auto fill-current text-brand-500" />
                     </div>
                     <div class="text-4xl text-gray-700 font-bold mt-5">
                         {{ config('app.name') }}
