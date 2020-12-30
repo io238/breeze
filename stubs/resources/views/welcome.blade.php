@@ -19,25 +19,27 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 items-center p-5">
 
-            <div class="w-full max-w-3xl mx-auto bg-gray-50 p-10 rounded">
+            <div class="w-full max-w-3xl mx-auto bg-gray-50 p-10 rounded-xl">
                 <div class="flex flex-col justify-center items-center">
                     <div>
-                        <x-application-logo class="block h-10 w-auto fill-current text-teal-500" />
+                        <x-application-logo class="block h-16 w-auto fill-current text-teal-500" />
                     </div>
-                    <div class="text-4xl text-teal-500 font-bold mt-5">
+                    <div class="text-4xl text-gray-700 font-bold mt-5">
                         {{ config('app.name') }}
                     </div>
                 </div>
 
+                <hr class="border-gray-200 mt-10">
+
                 @if (Route::has('login'))
-                    <div class="mt-10 flex justify-center gap-x-5">
+                    <div class="mt-10 flex justify-around">
                         @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-500 hover:text-gray-700 underline">Dashboard</a>
+                            <a href="{{ url('/dashboard') }}" class="text-gray-400 hover:text-gray-700 hover:underline">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" class="text-sm text-gray-500 hover:text-gray-700 underline">Login</a>
+                            <a href="{{ route('login') }}" class="text-gray-400 hover:text-gray-700 hover:underline">Login</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="text-sm text-gray-500 hover:text-gray-700 underline">Register</a>
+                                <a href="{{ route('register') }}" class="text-gray-400 hover:text-gray-700 hover:underline">Register</a>
                             @endif
                         @endauth
                     </div>
