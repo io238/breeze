@@ -1,3 +1,153 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+/*Resets*/
+
+[x-cloak] {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    /*disable default click color on Chrome (Android)*/
+    -webkit-tap-highlight-color: rgba(125, 125, 125, .1);
+}
+
+input:focus, textarea:focus, select:focus, .btn:focus {
+    outline: none;
+}
+
+button:disabled, input:disabled, a:disabled, .disabled {
+    @apply opacity-50;
+}
+
+
+/*Headings*/
+
+h1 {
+    @apply text-3xl font-bold text-gray-800 mb-5;
+}
+
+h2 {
+    @apply text-xl font-bold text-gray-700 mb-4;
+}
+
+h3 {
+    @apply text-lg font-semibold text-gray-700 mb-2;
+}
+
+
+/*Inputs*/
+
+input:not([type="submit"],[type='checkbox'],[type='radio']), textarea, select{
+    @apply text-gray-800 placeholder-gray-400 rounded px-2 py-0.5 shadow-inner border-gray-300 focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50;
+}
+
+select{
+    @apply pr-8 bg-gray-50 shadow-sm;
+}
+
+textarea{
+    @apply py-2;
+}
+
+label[for], input[type="radio"], input[type="checkbox"], input[type="submit"] {
+    @apply cursor-pointer;
+}
+
+input[type="checkbox"], input[type="radio"]{
+    @apply rounded border-gray-300 text-gray-700 shadow-sm focus:ring-offset-0 focus:ring focus:ring-blue-200 focus:ring-opacity-50;
+}
+
+input[type="radio"]{
+    @apply rounded-full;
+}
+
+label.wrapper{
+    @apply flex items-center gap-x-2;
+}
+
+
+
+
+/*Buttons*/
+
+.btn {
+    @apply font-semibold uppercase px-3 py-2 text-xs leading-4 tracking-wider no-underline inline-flex items-center justify-center rounded border border-transparent transition-all ease-in-out duration-150 bg-gray-800 text-white;
+}
+
+.btn:hover{
+    @apply bg-gray-700;
+}
+
+.btn:focus, .btn:active {
+    @apply ring ring-gray-500 border-gray-300 ring-opacity-20;
+}
+
+.btn-sm {
+    @apply px-2.5 py-1.5 text-xs leading-3;
+}
+
+.btn-lg {
+    @apply px-4 py-1.5 text-sm leading-6 font-bold;
+}
+
+.btn-brand {
+    @apply bg-brand-500 text-white;
+}
+
+.btn-brand:hover:not(:disabled) {
+    @apply bg-brand-400 text-brand-100;
+}
+
+.btn-info {
+    @apply bg-info-600 text-white;
+}
+
+.btn-info:hover:not(:disabled) {
+    @apply bg-info-500 text-info-100;
+}
+
+.btn-success {
+    @apply bg-success-600 text-white;
+}
+
+.btn-success:hover:not(:disabled) {
+    @apply bg-success-500 text-success-100;
+}
+
+.btn-warning {
+    @apply bg-warning-400 text-warning-800;
+}
+
+.btn-warning:hover:not(:disabled) {
+    @apply bg-warning-300 text-warning-700;
+}
+
+.btn-danger {
+    @apply bg-danger-600 text-white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    @apply bg-danger-500 text-danger-100;
+}
+
+.btn-secondary {
+    @apply bg-secondary-100 border border-gray-200 text-secondary-500;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    @apply bg-secondary-50 text-secondary-600;
+}
+
+
+/*Other*/
+
+.loading {
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='30' xmlns='http://www.w3.org/2000/svg' fill='%2300000033'%3E%3Ccircle cx='15' cy='15' r='15'%3E%3Canimate attributeName='r' from='15' to='15' begin='0s' dur='0.8s' values='15;9;15' calcMode='linear' repeatCount='indefinite'/%3E%3Canimate attributeName='fill-opacity' from='1' to='1' begin='0s' dur='0.8s' values='1;.5;1' calcMode='linear' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='60' cy='15' r='9' fill-opacity='.3'%3E%3Canimate attributeName='r' from='9' to='9' begin='0s' dur='0.8s' values='9;15;9' calcMode='linear' repeatCount='indefinite'/%3E%3Canimate attributeName='fill-opacity' from='.5' to='.5' begin='0s' dur='0.8s' values='.5;1;.5' calcMode='linear' repeatCount='indefinite'/%3E%3C/circle%3E%3Ccircle cx='105' cy='15' r='15'%3E%3Canimate attributeName='r' from='15' to='15' begin='0s' dur='0.8s' values='15;9;15' calcMode='linear' repeatCount='indefinite'/%3E%3Canimate attributeName='fill-opacity' from='1' to='1' begin='0s' dur='0.8s' values='1;.5;1' calcMode='linear' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: auto .8rem;
+}

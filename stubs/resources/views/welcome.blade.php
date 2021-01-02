@@ -19,7 +19,7 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 items-center p-5">
 
-            <div class="w-full max-w-3xl mx-auto bg-gray-50 p-10 rounded-xl">
+            <div class="w-full max-w-3xl mx-auto bg-gray-50 p-10 rounded border-t-2 border-brand-500 shadow">
                 <div class="flex flex-col justify-center items-center">
                     <div>
                         <x-application-logo class="block h-16 w-auto fill-current text-brand-500" />

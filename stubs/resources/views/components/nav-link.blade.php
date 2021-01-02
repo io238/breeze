@@ -1,11 +1,15 @@
 @props(['active'])
 
 @php
-$classes = ($active ?? false)
-            ? 'inline-flex items-center px-1 pt-1 border-b-2 border-brand-400 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-brand-700 transition duration-150 ease-in-out'
-            : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out';
+    $classes = ($active ?? false)
+        ? 'text-gray-800 border-brand-500 hover:text-gray-700 hover:border-brand-600 focus:text-gray-700 focus:border-brand-600'
+        : 'text-gray-800 border-transparent hover:text-gray-700 hover:border-gray-300 focus:text-gray-700 focus:border-gray-300';
 @endphp
 
-<a {{ $attributes->merge(['class' => $classes]) }}>
-    {{ $slot }}
-</a>
+<div class="inline-flex items-center">
+    <a {{ $attributes->merge(['class' => 'group py-1 px-2 rounded bg-transparent hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out']) }}>
+        <span class="group-hover group-focus border-b-2 text-sm font-medium transition duration-150 ease-in-out {{ $classes }}">
+            {{ $slot }}
+        </span>
+    </a>
+</div>
